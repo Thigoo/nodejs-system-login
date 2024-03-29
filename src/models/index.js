@@ -15,9 +15,11 @@ sequelize.authenticate()
         console.log('Error connecting database, ', err);
     });
 
-    const db = {};
-    db.sequelize = Sequelize;
+    const db = {};  
+    db.Sequelize = Sequelize;
     db.sequelize = sequelize;
 
     //connecting to model
     db.users = require('./userModel') (sequelize, DataTypes);
+
+    module.exports = db;
